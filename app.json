@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "firstExpoReactNativeProject",
-    "slug": "firstExpoReactNativeProject",
+    "slug": "first-expo-react-native-project",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -28,6 +26,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f98c901c-3d37-43ae-ba6a-0ce25f95427f",
+        "cli": {
+          "version": "2.8.0"
+        }
+      }
+    },
+    "owner": "object_417"
   }
 }
