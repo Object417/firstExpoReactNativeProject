@@ -1,6 +1,8 @@
+# Directories
 node_modules/
 .expo/
-dist/
+
+# Files
 npm-debug.*
 *.jks
 *.p8
@@ -8,7 +10,14 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
+
+# Build
+dist/
+build/
 web-build/
 
 # macOS
 .DS_Store
+
+# Visual Studio Code
+.idea/
