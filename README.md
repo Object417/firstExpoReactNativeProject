@@ -1,3 +1,3 @@
 # First Expo React Native Project
 
-Let's taste it.
+College assignment. Mobile application for learning Japanese language.
