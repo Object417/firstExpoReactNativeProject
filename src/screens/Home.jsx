@@ -1,13 +1,13 @@
 import { View, StyleSheet } from "react-native"
 import { Button, Provider as PaperProvider, Text } from "react-native-paper"
 
-function Home({ navigation }) {
+function Home({ navigation, route }) {
   return (
     <View>
       <Text variant="bodyMedium">Home screen</Text>
-      <Button mode="contained" onPress={() => navigation.navigate("About")}>
+      {/* <Button mode="contained" onPress={() => navigation.navigate("About")}>
         About
-      </Button>
+      </Button> */}
     </View>
   )
 }

@@ -1,10 +1,12 @@
 import React, { useEffect } from "react"
-import { Appbar } from "react-native-paper"
+import { Appbar, Text } from "react-native-paper"
 
-function CustomNavigationHeader({ route, navigation, back }) {
+function CustomNavigationHeader({ layout, navigation, route, options }) {
+  // console.log(props)
+
   return (
     <Appbar.Header>
-      {back ? <Appbar.BackAction onPress={() => navigation.goBack()} /> : null}
+      {/* {back ? <Appbar.BackAction onPress={() => navigation.goBack()} /> : null} */}
       <Appbar.Content title={route.name} />
     </Appbar.Header>
   )
