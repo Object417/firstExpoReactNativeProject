@@ -7,7 +7,7 @@
     "start": "expo start --tunnel",
     "android": "expo start --android --tunnel",
     "ios": "expo start --ios --tunnel",
-    "web": "expo start --web"
+    "web": "expo start --web --tunnel"
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.2",

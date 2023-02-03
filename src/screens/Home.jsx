@@ -5,9 +5,6 @@ function Home({ navigation, route }) {
   return (
     <View>
       <Text variant="bodyMedium">Home screen</Text>
-      {/* <Button mode="contained" onPress={() => navigation.navigate("About")}>
-        About
-      </Button> */}
     </View>
   )
 }

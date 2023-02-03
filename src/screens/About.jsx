@@ -1,8 +1,10 @@
 import React, { useEffect } from "react"
 import { View, ScrollView } from "react-native"
-import { Text, Button, List } from "react-native-paper"
+import { Text, Button, List, Divider } from "react-native-paper"
 import { useSelector } from "react-redux"
 import { hiraganaSelector } from "../store/hiraganaSlice"
+
+import words from "../store/words.json"
 
 function About({ navigation, route }) {
   const hiragana = useSelector(hiraganaSelector)
@@ -19,6 +21,15 @@ function About({ navigation, route }) {
           key={hiragana.letter}
           title={hiragana.symbolUnicode}
           description={hiragana.letter}
+        />
+      ))}
+      <Divider />
+      <List.Subheader>Words</List.Subheader>
+      {words.map(({ word, kanji, hiragana, meaning }) => (
+        <List.Item
+          key={word}
+          title={`${kanji} (${hiragana})`}
+          description={meaning}
         />
       ))}
     </ScrollView>

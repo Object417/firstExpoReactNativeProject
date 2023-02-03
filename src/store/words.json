@@ -1,16 +1,122 @@
 {
-  "arigato": {
-    "word": "有り難う",
-    "wordUnicode": "\u6709\u308a\u96e3\u3046",
-    "hiragana": "ありがとう",
-    "hiraganaUnicode": "\u3042\u308a\u304c\u3068\u3046",
-    "meanings": ["thank you", "thanks"]
+  "hai": {
+    "word": "hai",
+    "kanji": "灰",
+    "hiragana": "はい",
+    "meaning": "yes"
   },
-  "anata": {
-    "word": "貴方",
-    "wordUnicode": "\u8cb4\u65b9",
-    "hiragana": "あなた",
-    "hiraganaUnicode": "\u3042\u306a\u305f",
-    "meanings": ["you", "dear"]
+  "iie": {
+    "word": "iie",
+    "kanji": "否",
+    "hiragana": "いいえ",
+    "meaning": "no"
+  },
+  "konnichiwa": {
+    "word": "konnichiwa",
+    "kanji": "今日は",
+    "hiragana": "こんにちは",
+    "meaning": "hello, good day"
+  },
+  "sayonara": {
+    "word": "sayonara",
+    "kanji": " 左様なら",
+    "hiragana": "さよなら",
+    "meaning": "bye, goodbye"
+  },
+  "arigato": {
+    "word": "arigato",
+    "kanji": "有り難う",
+    "hiragana": "ありがとう",
+    "meaning": "thanks"
+  },
+  "gomen nasai": {
+    "word": "gomen nasai",
+    "kanji": "御免なさい",
+    "hiragana": "ごめんなさい",
+    "meaning": "sorry"
+  },
+  "ukeireru": {
+    "word": "ukeireru",
+    "kanji": "受け入れる",
+    "hiragana": "うけいれる",
+    "meaning": "to accept, to agree"
+  },
+  "momeru": {
+    "word": "momeru",
+    "kanji": "揉める",
+    "hiragana": "もめる",
+    "meaning": "to disagree, to quarrel"
+  },
+  "katei": {
+    "word": "katei",
+    "kanji": "家庭",
+    "hiragana": "かてい",
+    "meaning": "home"
+  },
+  "gakko": {
+    "word": "gakko",
+    "kanji": "学校",
+    "hiragana": "がっこう",
+    "meaning": "school"
+  },
+  "shoten": {
+    "word": "shoten",
+    "kanji": "商店",
+    "hiragana": "しょうてん",
+    "meaning": "shop"
+  },
+  "shoku": {
+    "word": "shoku",
+    "kanji": "職",
+    "hiragana": "しょく",
+    "meaning": "job, work"
+  },
+  "mura": {
+    "word": "mura",
+    "kanji": "村",
+    "hiragana": "むら",
+    "meaning": "village"
+  },
+  "seikatsu": {
+    "word": "seikatsu",
+    "kanji": "生活",
+    "hiragana": "せいかつ",
+    "meaning": "life, living"
+  },
+  "shi": {
+    "word": "shi",
+    "kanji": "死",
+    "hiragana": "し",
+    "meaning": "death"
+  },
+  "tasukery": {
+    "word": "tasukery",
+    "kanji": "助ける",
+    "hiragana": "たすける",
+    "meaning": "to save, to rescue"
+  },
+  "midasu": {
+    "word": "midasu",
+    "kanji": "乱す",
+    "hiragana": "みだす",
+    "meaning": "to disturb"
+  },
+  "daisuki": {
+    "word": "daisuki",
+    "kanji": "大好き",
+    "hiragana": "だいすき",
+    "meaning": "to love"
+  },
+  "kirau": {
+    "word": "kirau",
+    "kanji": " 嫌う",
+    "hiragana": "きらう",
+    "meaning": "to hate, to dislike"
+  },
+  "sekai": {
+    "word": "sekai",
+    "kanji": "世界",
+    "hiragana": "せかい",
+    "meaning": "the world, the universe"
   }
 }
