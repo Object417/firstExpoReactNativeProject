@@ -7,3 +7,4 @@
 - Add and configure `eslint`
 - Find a way to use sort of Webpack resolve aliases (`Components/` for
   `./src/components/`, etc.)
+- Set up Redux Store

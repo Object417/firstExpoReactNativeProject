@@ -1,0 +1,16 @@
+{
+  "arigato": {
+    "word": "有り難う",
+    "wordUnicode": "\u6709\u308a\u96e3\u3046",
+    "hiragana": "ありがとう",
+    "hiraganaUnicode": "\u3042\u308a\u304c\u3068\u3046",
+    "meanings": ["thank you", "thanks"]
+  },
+  "anata": {
+    "word": "貴方",
+    "wordUnicode": "\u8cb4\u65b9",
+    "hiragana": "あなた",
+    "hiraganaUnicode": "\u3042\u306a\u305f",
+    "meanings": ["you", "dear"]
+  }
+}
