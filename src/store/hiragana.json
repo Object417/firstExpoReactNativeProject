@@ -1,23 +1,51 @@
 {
-  "a": {
-    "letter": "a",
-    "symbol": "あ",
-    "symbolUnicode": "\u3042"
-  },
-  "i": {
-    "letter": "i",
-    "symbolUnicode": "\u3044"
-  },
-  "u": {
-    "letter": "u",
-    "symbolUnicode": "\u3046"
-  },
-  "e": {
-    "letter": "e",
-    "symbolUnicode": "\u3048"
-  },
-  "o": {
-    "letter": "o",
-    "symbolUnicode": "\u304a"
-  }
+  "a": { "letter": "a", "symbol": "\u3042" },
+  "i": { "letter": "i", "symbol": "\u3044" },
+  "u": { "letter": "u", "symbol": "\u3046" },
+  "e": { "letter": "e", "symbol": "\u3048" },
+  "o": { "letter": "o", "symbol": "\u3092" },
+  "ka": { "letter": "ka", "symbol": "\u304b" },
+  "ki": { "letter": "ki", "symbol": "\u304d" },
+  "ku": { "letter": "ku", "symbol": "\u304f" },
+  "ke": { "letter": "ke", "symbol": "\u3051" },
+  "ko": { "letter": "ko", "symbol": "\u3053" },
+  "sa": { "letter": "sa", "symbol": "\u3055" },
+  "si": { "letter": "si", "symbol": "\u3057" },
+  "su": { "letter": "su", "symbol": "\u3059" },
+  "se": { "letter": "se", "symbol": "\u305b" },
+  "so": { "letter": "so", "symbol": "\u305d" },
+  "ta": { "letter": "ta", "symbol": "\u305f" },
+  "ti": { "letter": "ti", "symbol": "\u3061" },
+  "tu": { "letter": "tu", "symbol": "\u3064" },
+  "te": { "letter": "te", "symbol": "\u3066" },
+  "to": { "letter": "to", "symbol": "\u3068" },
+  "na": { "letter": "na", "symbol": "\u306a" },
+  "ni": { "letter": "ni", "symbol": "\u306b" },
+  "nu": { "letter": "nu", "symbol": "\u306c" },
+  "ne": { "letter": "ne", "symbol": "\u306d" },
+  "no": { "letter": "no", "symbol": "\u306e" },
+  "ha": { "letter": "ha", "symbol": "\u306f" },
+  "hi": { "letter": "hi", "symbol": "\u3072" },
+  "hu": { "letter": "hu", "symbol": "\u3075" },
+  "he": { "letter": "he", "symbol": "\u3078" },
+  "ho": { "letter": "ho", "symbol": "\u307b" },
+  "ma": { "letter": "ma", "symbol": "\u307e" },
+  "mi": { "letter": "mi", "symbol": "\u307f" },
+  "mu": { "letter": "mu", "symbol": "\u3080" },
+  "me": { "letter": "me", "symbol": "\u3081" },
+  "mo": { "letter": "mo", "symbol": "\u3082" },
+  "ya": { "letter": "ya", "symbol": "\u3084" },
+  "ii": { "letter": "ii", "symbol": "\u3044\u3044" },
+  "yu": { "letter": "yu", "symbol": "\u3086" },
+  "i~e": { "letter": "i~e", "symbol": "\u3044\u3047" },
+  "yo": { "letter": "yo", "symbol": "\u3088" },
+  "ra": { "letter": "ra", "symbol": "\u3089" },
+  "ri": { "letter": "ri", "symbol": "\u308a" },
+  "ru": { "letter": "ru", "symbol": "\u308b" },
+  "re": { "letter": "re", "symbol": "\u308c" },
+  "ro": { "letter": "ro", "symbol": "\u308d" },
+  "wa": { "letter": "wa", "symbol": "\u308f" },
+  "wi": { "letter": "wi", "symbol": "\u3046\u3043" },
+  "we": { "letter": "we", "symbol": "\u3046\u3047" },
+  "n": { "letter": "n", "symbol": "\u3093" }
 }

@@ -1,0 +1,23 @@
+{
+  "a": {
+    "letter": "a",
+    "symbol": "あ",
+    "symbolUnicode": "\u3042"
+  },
+  "i": {
+    "letter": "i",
+    "symbolUnicode": "\u3044"
+  },
+  "u": {
+    "letter": "u",
+    "symbolUnicode": "\u3046"
+  },
+  "e": {
+    "letter": "e",
+    "symbolUnicode": "\u3048"
+  },
+  "o": {
+    "letter": "o",
+    "symbolUnicode": "\u304a"
+  }
+}

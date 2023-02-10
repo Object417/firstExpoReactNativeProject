@@ -19,13 +19,13 @@ function About({ navigation, route }) {
       {Object.values(hiragana).map((hiragana, index) => (
         <List.Item
           key={hiragana.letter}
-          title={hiragana.symbolUnicode}
+          title={hiragana.symbol}
           description={hiragana.letter}
         />
       ))}
       <Divider />
       <List.Subheader>Words</List.Subheader>
-      {words.map(({ word, kanji, hiragana, meaning }) => (
+      {Object.values(words).map(({ word, kanji, hiragana, meaning }) => (
         <List.Item
           key={word}
           title={`${kanji} (${hiragana})`}
