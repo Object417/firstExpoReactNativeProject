@@ -1,24 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 import hiragana from "./hiragana.json"
+import dakuten from "./dakuten.json"
+import handakuten from "./handakuten.json"
 
 const hiraganaSlice = createSlice({
   name: "hiragana",
-  initialState: hiragana,
-  reducers: {
-    editLetter(state, { payload }) {
-      state[payload.letter] = payload
-    },
-    deleteLetter(state, { payload }) {
-      delete state[payload]
-    }
-  }
+  initialState: { hiragana, dakuten, handakuten },
+  reducers: {}
 })
 
 export function hiraganaSelector(state) {
   return state.hiragana
 }
-
-export const { editLetter, deleteLetter } = hiraganaSlice.actions
+export function hiraganaBaseSelector(state) {
+  return state.hiragana.hiragana
+}
+export function dakutenSelector(state) {
+  return state.hiragana.dakuten
+}
+export function handakutenSelector(state) {
+  return state.hiragana.handakuten
+}
 
 export default hiraganaSlice.reducer

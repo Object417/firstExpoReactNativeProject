@@ -40,7 +40,7 @@ function App() {
       <PaperProvider theme={MD3LightTheme}>
         <NavigationContainer>
           <Tab.Navigator
-            initialRouteName="Home"
+            initialRouteName="About"
             screenOptions={{
               header: (props) => <CustomNavigationHeader {...props} />
             }}
