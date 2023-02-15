@@ -1,1 +1,22 @@
-{}
+{
+  "ga": { "symbol": "が", "letter": "ga" },
+  "gi": { "symbol": "ぎ", "letter": "gi" },
+  "gu": { "symbol": "ぐ", "letter": "gu" },
+  "ge": { "symbol": "げ", "letter": "ge" },
+  "go": { "symbol": "ご", "letter": "go" },
+  "za": { "symbol": "ざ", "letter": "za" },
+  "zi": { "symbol": "じ", "letter": "zi" },
+  "zu": { "symbol": "ず", "letter": "zu" },
+  "ze": { "symbol": "ぜ", "letter": "ze" },
+  "zo": { "symbol": "ぞ", "letter": "zo" },
+  "da": { "symbol": "だ", "letter": "da" },
+  "di": { "symbol": "ぢ", "letter": "di" },
+  "du": { "symbol": "づ", "letter": "du" },
+  "de": { "symbol": "で", "letter": "de" },
+  "do": { "symbol": "ど", "letter": "do" },
+  "ba": { "symbol": "ば", "letter": "ba" },
+  "bi": { "symbol": "び", "letter": "bi" },
+  "bu": { "symbol": "ぶ", "letter": "bu" },
+  "be": { "symbol": "べ", "letter": "be" },
+  "bo": { "symbol": "ぼ", "letter": "bo" }
+}

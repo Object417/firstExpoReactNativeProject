@@ -11,5 +11,5 @@
 - [ ] Find a way to use sort of Webpack resolve aliases (`Components/` for
       `./src/components/`, etc.)
 - [x] Set up Redux Store
-- [ ] Get all hiragana (dakuten and handakuten also) symbols
+- [x] Get all hiragana (dakuten and handakuten also) symbols
 - [ ] Get a list of most popular common Japanese words

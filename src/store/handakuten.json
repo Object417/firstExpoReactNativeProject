@@ -1,1 +1,7 @@
-{}
+{
+  "pa": { "symbol": "ぱ", "letter": "pa" },
+  "pi": { "symbol": "ぴ", "letter": "pi" },
+  "pu": { "symbol": "ぷ", "letter": "pu" },
+  "pe": { "symbol": "ぺ", "letter": "pe" },
+  "po": { "symbol": "ぽ", "letter": "po" }
+}
