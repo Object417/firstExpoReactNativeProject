@@ -1,5 +1,12 @@
 # To Do
 
+## Bugs
+
+> **Note**
+> Nothing here yet. Chill!
+
+## Tasks
+
 - [x] Screens navigation
 - [x] Learn how to render other components with props
 - [ ] Implement simple quiz logic
@@ -16,4 +23,4 @@
 - [x] Set up Redux Store
 - [x] Get all hiragana (dakuten and handakuten also) symbols
 - [ ] Get a list of most popular common Japanese words
-- [ ] Replace handmade navigation on `QuizScreen` with `Stack.Navigator`
+- [x] Replace handmade navigation on `QuizScreen` with `Stack.Navigator`
