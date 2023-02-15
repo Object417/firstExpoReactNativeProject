@@ -3,7 +3,6 @@ const { createSlice } = require("@reduxjs/toolkit")
 const quizSlice = createSlice({
   name: "quiz",
   initialState: {
-    status: "not started", // "not started", "in progress", "finished"
     score: 0,
     wordList: [],
     wordIndex: 0
@@ -20,6 +19,9 @@ const quizSlice = createSlice({
     },
     setWordIndex(state, { payload }) {
       state.wordIndex = payload
+    },
+    setState(state, { payload }) {
+      return payload
     }
   }
 })
@@ -28,6 +30,6 @@ export function quizStateSelector(state) {
   return state.quiz
 }
 
-export const { setStatus, setScore, setWordList, setWordIndex } =
+export const { setStatus, setScore, setWordList, setWordIndex, setState } =
   quizSlice.actions
 export default quizSlice.reducer

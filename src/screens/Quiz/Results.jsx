@@ -1,5 +1,5 @@
 import React from "react"
-import { View } from "react-native"
+import { StyleSheet, View } from "react-native"
 import { Button, Text } from "react-native-paper"
 import { useDispatch, useSelector } from "react-redux"
 import {
@@ -7,18 +7,28 @@ import {
   setStatus as setQuizStatus
 } from "../../store/quizSlice"
 
-function Results() {
+const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+})
+
+function Results({ navigation, route }) {
   const dispatch = useDispatch()
   const { score } = useSelector(quizStateSelector)
 
   function handleStartQuiz() {
-    dispatch(setQuizStatus("not started"))
+    navigation.navigate("Start Quiz")
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Score: {score}</Text>
-      <Button onPress={handleStartQuiz}>Start Again</Button>
+      <Button onPress={handleStartQuiz} mode="contained">
+        Start Again
+      </Button>
     </View>
   )
 }

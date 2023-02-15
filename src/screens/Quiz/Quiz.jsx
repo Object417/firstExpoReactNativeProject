@@ -1,30 +1,40 @@
 import React from "react"
-import { StyleSheet, View } from "react-native"
-import { Button } from "react-native-paper"
-import { useDispatch } from "react-redux"
-import { setStatus as setQuizStatus } from "../../store/quizSlice"
+import { StyleSheet, View, ScrollView } from "react-native"
+import { Button, List } from "react-native-paper"
+import { useDispatch, useSelector } from "react-redux"
+import {
+  quizStateSelector,
+  setStatus as setQuizStatus
+} from "../../store/quizSlice"
 
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    alignItems: "center",
+    // alignItems: "center",
     justifyContent: "center"
   }
 })
 
-function Quiz() {
+function Quiz({ navigation, route }) {
   const dispatch = useDispatch()
+  const { wordList } = useSelector(quizStateSelector)
 
   function handleFinishQuiz() {
-    dispatch(setQuizStatus("finished"))
+    navigation.navigate("Quiz Results")
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView>
+      <List.Section title="Quiz Words">
+        {wordList.map(({ word, kanji, hiragana, meaning }) => (
+          <List.Item key={word} title={kanji} description={meaning} />
+        ))}
+      </List.Section>
+
       <Button onPress={handleFinishQuiz} mode="contained">
         Results Screen
       </Button>
-    </View>
+    </ScrollView>
   )
 }
 
