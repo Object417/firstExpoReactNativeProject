@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
 import { default as AboutScreen } from "./src/screens/About"
 import { default as HomeScreen } from "./src/screens/Home"
-import { default as QuizScreen } from "./src/screens/Quiz"
+import { default as QuizScreen } from "./src/screens/Quiz/index"
 
 import CustomNavigationHeader from "./src/components/CustomNavigationHeader"
 import { Provider as StoreProvider } from "react-redux"
