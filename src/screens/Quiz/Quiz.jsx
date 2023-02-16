@@ -1,7 +1,11 @@
 import React from "react"
 import { StyleSheet, View, ScrollView } from "react-native"
-import { Button, List } from "react-native-paper"
+import { Button, Card, List, Text } from "react-native-paper"
 import { useDispatch, useSelector } from "react-redux"
+import shuffleList from "shuffle-list"
+import GrowContainer from "../../components/GrowContainer"
+import getRandomItems from "../../helpers/getRandomItems"
+import { fullHiraganaSelctor } from "../../store/hiraganaSlice"
 import {
   quizStateSelector,
   setStatus as setQuizStatus
@@ -10,31 +14,74 @@ import {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    // alignItems: "center",
+    alignItems: "center",
     justifyContent: "center"
+  },
+  card: {
+    flexGrow: 1
+  },
+  btnGroup: {
+    flexGrow: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignContent: "flex-end",
+    gap: "0.5rem",
+    padding: "0.5rem"
+  },
+  optionBtn: {
+    width: "100%",
+    maxWidth: "calc(50% - 0.25rem)",
+    flexGrow: 1,
+    flexShrink: 1
   }
 })
 
 function Quiz({ navigation, route }) {
   const dispatch = useDispatch()
-  const { wordList } = useSelector(quizStateSelector)
+  const hiragana = useSelector(fullHiraganaSelctor)
+  const { wordList, wordIndex } = useSelector(quizStateSelector)
 
-  function handleFinishQuiz() {
-    navigation.navigate("Quiz Results")
+  const word = wordList[wordIndex]
+  let btnOptions = getRandomItems(Object.values(hiragana), 3)
+  btnOptions.push({
+    ...Object.values(hiragana).find(
+      ({ symbol }) => symbol === word.hiragana[0]
+    ),
+    isCorrect: true
+  })
+  btnOptions = shuffleList(btnOptions)
+
+  console.log(btnOptions)
+
+  function handleOptionSelected(letter) {
+    word.hiragana[0] === hiragana[letter].symbol &&
+      console.log("Correct answer!")
   }
 
   return (
-    <ScrollView>
-      <List.Section title="Quiz Words">
-        {wordList.map(({ word, kanji, hiragana, meaning }) => (
-          <List.Item key={word} title={kanji} description={meaning} />
+    <GrowContainer>
+      <View style={styles.container}>
+        <Text variant="titleLarge">{word.kanji}</Text>
+        <Text variant="bodyMedium">{word.meaning}</Text>
+      </View>
+      <View style={styles.btnGroup}>
+        {btnOptions.map(({ letter, symbol, isCorrect }) => (
+          <Button
+            key={letter}
+            mode="contained"
+            style={
+              isCorrect
+                ? { ...styles.optionBtn, backgroundColor: "green" }
+                : styles.optionBtn
+            }
+            onPress={() => handleOptionSelected(letter)}
+          >
+            {symbol}
+          </Button>
         ))}
-      </List.Section>
-
-      <Button onPress={handleFinishQuiz} mode="contained">
-        Results Screen
-      </Button>
-    </ScrollView>
+      </View>
+    </GrowContainer>
   )
 }
 

@@ -26,8 +26,6 @@ function Start({ navigation, route }) {
   function handleQuizStart() {
     const randomWords = getRandomItems(Object.values(words), 10)
 
-    console.log(randomWords)
-
     dispatch(setWordList(randomWords))
     dispatch(setWordIndex(0))
 
