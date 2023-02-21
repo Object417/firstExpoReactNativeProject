@@ -13,7 +13,7 @@ const hiraganaSlice = createSlice({
 export function hiraganaSelector(state) {
   return state.hiragana
 }
-export function fullHiraganaSelctor(state) {
+export function fullHiraganaSelector(state) {
   return {
     ...state.hiragana.hiragana,
     ...state.hiragana.dakuten,

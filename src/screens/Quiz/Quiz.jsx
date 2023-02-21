@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import shuffleList from "shuffle-list"
 import GrowContainer from "../../components/GrowContainer"
 import getRandomItems from "../../helpers/getRandomItems"
-import { fullHiraganaSelctor } from "../../store/hiraganaSlice"
+import { fullHiraganaSelector } from "../../store/hiraganaSlice"
 import {
   quizStateSelector,
   setStatus as setQuizStatus
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 
 function Quiz({ navigation, route }) {
   const dispatch = useDispatch()
-  const hiragana = useSelector(fullHiraganaSelctor)
+  const hiragana = useSelector(fullHiraganaSelector)
   const { wordList, wordIndex } = useSelector(quizStateSelector)
 
   const word = wordList[wordIndex]
