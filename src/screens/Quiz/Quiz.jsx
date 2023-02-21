@@ -55,8 +55,9 @@ function Quiz({ navigation, route }) {
   console.log(btnOptions)
 
   function handleOptionSelected(letter) {
-    word.hiragana[0] === hiragana[letter].symbol &&
-      console.log("Correct answer!")
+    word.hiragana[0] === hiragana[letter].symbol
+      ? console.log("Correct answer!")
+      : console.log("Wrong")
   }
 
   return (
