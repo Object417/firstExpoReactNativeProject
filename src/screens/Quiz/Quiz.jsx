@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux"
 import shuffleList from "shuffle-list"
 import GrowContainer from "../../components/GrowContainer"
 import getRandomItems from "../../helpers/getRandomItems"
-import { fullHiraganaSelector } from "../../store/hiraganaSlice"
+import { fullHiraganaSelector } from "@Store/hiraganaSlice"
+
 import {
   quizStateSelector,
   setStatus as setQuizStatus
