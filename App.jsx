@@ -1,20 +1,21 @@
 import React, { useState } from "react"
+import { NavigationContainer } from "@react-navigation/native"
+import { createStackNavigator } from "@react-navigation/stack"
+
+import { Provider as StoreProvider } from "react-redux"
+import store from "@Store/store"
 
 import { MD3LightTheme, Provider as PaperProvider } from "react-native-paper"
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 
-import { NavigationContainer } from "@react-navigation/native"
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import LearnScreen from "@Screens/Learn"
+import QuizScreen from "@Screens/Quiz"
+import HiraganaScreen from "@Screens/Hiragana"
 
-import { default as AboutScreen } from "./src/screens/About"
-import { default as HomeScreen } from "./src/screens/Home"
-import { default as QuizScreen } from "./src/screens/Quiz/index"
+// For some reason this shit throws an error when is imported first
+// So I decided just to put it in the end
+import HomeScreen from "@Screens/Home"
 
-import CustomNavigationHeader from "./src/components/CustomNavigationHeader"
-import { Provider as StoreProvider } from "react-redux"
-import store from "./src/store/store"
-
-const Tab = createBottomTabNavigator()
+const Stack = createStackNavigator()
 
 function App() {
   const [screens, setScreens] = useState([
@@ -24,14 +25,19 @@ function App() {
       icon: { name: "home" }
     },
     {
-      name: "About",
-      component: AboutScreen,
-      icon: { name: "school" }
+      name: "Learn",
+      component: LearnScreen,
+      icon: { name: "learn" }
+    },
+    {
+      name: "Hiragana",
+      component: HiraganaScreen,
+      icon: { name: "hiragana" }
     },
     {
       name: "Quiz",
       component: QuizScreen,
-      icon: { name: "gamepad" }
+      icon: { name: "quiz" }
     }
   ])
 
@@ -39,29 +45,11 @@ function App() {
     <StoreProvider store={store}>
       <PaperProvider theme={MD3LightTheme}>
         <NavigationContainer>
-          <Tab.Navigator
-            initialRouteName="About"
-            screenOptions={{
-              header: (props) => <CustomNavigationHeader {...props} />
-            }}
-          >
+          <Stack.Navigator initialRouteName="Home">
             {screens.map(({ name, component, icon }) => (
-              <Tab.Screen
-                key={name}
-                name={name}
-                component={component}
-                options={{
-                  tabBarIcon: ({ color, size }) => (
-                    <MaterialCommunityIcons
-                      name={icon.name}
-                      color={icon.color || color}
-                      size={icon.size || size}
-                    />
-                  )
-                }}
-              />
+              <Stack.Screen key={name} name={name} component={component} />
             ))}
-          </Tab.Navigator>
+          </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
     </StoreProvider>
