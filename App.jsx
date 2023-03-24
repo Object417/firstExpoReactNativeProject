@@ -4,8 +4,13 @@ import { createStackNavigator } from "@react-navigation/stack"
 
 import { Provider as StoreProvider } from "react-redux"
 import store from "@Store/store"
+import theme from "@Store/theme"
 
-import { MD3LightTheme, Provider as PaperProvider } from "react-native-paper"
+import {
+  Avatar,
+  MD3LightTheme,
+  Provider as PaperProvider
+} from "react-native-paper"
 
 import LearnScreen from "@Screens/Learn"
 import QuizScreen from "@Screens/Quiz"
@@ -14,6 +19,11 @@ import HiraganaScreen from "@Screens/Hiragana"
 // For some reason this shit throws an error when is imported first
 // So I decided just to put it in the end
 import HomeScreen from "@Screens/Home"
+import { Image } from "react-native"
+import _ from "lodash"
+
+import chessIcon from "@/icons/chess.svg"
+import backpackIcon from "@/icons/backpack.svg"
 
 const Stack = createStackNavigator()
 
@@ -22,32 +32,59 @@ function App() {
     {
       name: "Home",
       component: HomeScreen,
-      icon: { name: "home" }
+      options: {
+        headerShown: false
+      }
     },
     {
       name: "Learn",
       component: LearnScreen,
-      icon: { name: "learn" }
+
+      options: {
+        title: "Explaining Japanese"
+        // headerLeft: () => <Avatar.Image source={backpackIcon} size={32} />
+      }
     },
     {
       name: "Hiragana",
       component: HiraganaScreen,
-      icon: { name: "hiragana" }
+      options: {
+        title: "Learn Hiragana"
+      }
     },
     {
       name: "Quiz",
       component: QuizScreen,
-      icon: { name: "quiz" }
+      options: {
+        title: "Quiz"
+        // headerLeft: () => <Avatar.Image source={chessIcon} size={24} />
+      }
     }
   ])
 
   return (
     <StoreProvider store={store}>
-      <PaperProvider theme={MD3LightTheme}>
+      <PaperProvider theme={theme}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home">
-            {screens.map(({ name, component, icon }) => (
-              <Stack.Screen key={name} name={name} component={component} />
+          <Stack.Navigator
+            initialRouteName="Home"
+            screenOptions={{
+              headerStyle: {
+                backgroundColor: theme.colors.primary
+              },
+              headerTitleStyle: {
+                color: "#fff",
+                ...theme.fonts.titleLarge
+              }
+            }}
+          >
+            {screens.map(({ name, component, options }) => (
+              <Stack.Screen
+                key={name}
+                name={name}
+                component={component}
+                options={options}
+              />
             ))}
           </Stack.Navigator>
         </NavigationContainer>

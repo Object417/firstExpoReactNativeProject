@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
-import { default as hiraganaReducer } from "./hiraganaSlice"
-import { default as quizReducer } from "./quizSlice"
+import hiraganaReducer from "./hiraganaSlice"
+import quizReducer from "./quizSlice"
+import userReducer from "./userSlice"
 
 const store = configureStore({
   reducer: {
     hiragana: hiraganaReducer,
-    quiz: quizReducer
+    quiz: quizReducer,
+    user: userReducer
   }
 })
 
