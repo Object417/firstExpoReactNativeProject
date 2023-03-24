@@ -1,13 +1,26 @@
 import React, { useEffect } from "react"
-import { Appbar, Text } from "react-native-paper"
+import { StyleSheet, Image } from "react-native"
+import { Appbar, Text, useTheme } from "react-native-paper"
 
 function CustomNavigationHeader({ layout, navigation, route, options }) {
-  // console.log(props)
+  const theme = useTheme()
+
+  const styles = StyleSheet.create({
+    header: {
+      backgroundColor: theme.colors.primary
+    },
+    icon: { width: 32, height: 32, marginRight: 8 }
+  })
 
   return (
-    <Appbar.Header>
-      {/* {back ? <Appbar.BackAction onPress={() => navigation.goBack()} /> : null} */}
-      <Appbar.Content title={route.name} />
+    <Appbar.Header style={styles.header}>
+      {navigation.canGoBack ? (
+        <Appbar.BackAction color="#fff" onPress={() => navigation.goBack()} />
+      ) : null}
+      {options.icon ? (
+        <Image source={options.icon} style={styles.icon} />
+      ) : null}
+      <Appbar.Content title={options.title} color="#fff" />
     </Appbar.Header>
   )
 }

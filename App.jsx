@@ -1,29 +1,25 @@
-import React, { useState } from "react"
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
+import { useState } from "react"
 
-import { Provider as StoreProvider } from "react-redux"
 import store from "@Store/store"
 import theme from "@Store/theme"
+import { Provider as StoreProvider } from "react-redux"
 
-import {
-  Avatar,
-  MD3LightTheme,
-  Provider as PaperProvider
-} from "react-native-paper"
+import { Provider as PaperProvider } from "react-native-paper"
 
+import HiraganaScreen from "@Screens/Hiragana"
 import LearnScreen from "@Screens/Learn"
 import QuizScreen from "@Screens/Quiz"
-import HiraganaScreen from "@Screens/Hiragana"
 
 // For some reason this shit throws an error when is imported first
 // So I decided just to put it in the end
 import HomeScreen from "@Screens/Home"
-import { Image } from "react-native"
-import _ from "lodash"
 
-import chessIcon from "@/icons/chess.svg"
 import backpackIcon from "@/icons/backpack.svg"
+import chessIcon from "@/icons/chess.svg"
+import hiraganaIcon from "@/icons/japanese-a.svg"
+import CustomNavigationHeader from "@Components/CustomNavigationHeader"
 
 const Stack = createStackNavigator()
 
@@ -41,23 +37,24 @@ function App() {
       component: LearnScreen,
 
       options: {
-        title: "Explaining Japanese"
-        // headerLeft: () => <Avatar.Image source={backpackIcon} size={32} />
+        title: "Explaining Japanese",
+        icon: backpackIcon
       }
     },
     {
       name: "Hiragana",
       component: HiraganaScreen,
       options: {
-        title: "Learn Hiragana"
+        title: "Learn Hiragana",
+        icon: hiraganaIcon
       }
     },
     {
       name: "Quiz",
       component: QuizScreen,
       options: {
-        title: "Quiz"
-        // headerLeft: () => <Avatar.Image source={chessIcon} size={24} />
+        title: "Quiz",
+        icon: chessIcon
       }
     }
   ])
@@ -69,13 +66,7 @@ function App() {
           <Stack.Navigator
             initialRouteName="Home"
             screenOptions={{
-              headerStyle: {
-                backgroundColor: theme.colors.primary
-              },
-              headerTitleStyle: {
-                color: "#fff",
-                ...theme.fonts.titleLarge
-              }
+              header: (props) => <CustomNavigationHeader {...props} />
             }}
           >
             {screens.map(({ name, component, options }) => (
