@@ -10,6 +10,8 @@
 - [x] Replace handmade navigation on `QuizScreen` with `Stack.Navigator`
 - [ ] Navigation between screens
 - [ ] Learn how to render other components with props
+- [ ] Develop Hiragana screen (cards, play appropriate sound when pressed)
+- [ ] Quiz screen (logic) and subscreens with questions
 
 - [x] Find a way to use module resolve aliases
 - [x] Find a way to automatically import `index` files
