@@ -1,5 +1,4 @@
 import * as sounds from "@/audio/hiragana"
-import GrowContainer from "@Components/GrowContainer"
 import {
   dakutenSelector,
   handakutenSelector,
@@ -9,7 +8,7 @@ import { Audio } from "expo-av"
 import _ from "lodash"
 
 import { useEffect, useState } from "react"
-import { Dimensions, StyleSheet, View } from "react-native"
+import { Dimensions, ScrollView, StyleSheet, View } from "react-native"
 import { Card, Text } from "react-native-paper"
 import { useSelector } from "react-redux"
 
@@ -65,7 +64,7 @@ function HiraganaScreen() {
   }, [sound])
 
   return (
-    <GrowContainer style={{ paddingHorizontal: 16 }}>
+    <ScrollView style={{ paddingHorizontal: 16 }}>
       {hiraganaPlus.map(({ title, symbols }) => (
         <View key={title}>
           <Text variant="titleLarge" style={styles.title}>
@@ -91,7 +90,7 @@ function HiraganaScreen() {
           </View>
         </View>
       ))}
-    </GrowContainer>
+    </ScrollView>
   )
 }
 
