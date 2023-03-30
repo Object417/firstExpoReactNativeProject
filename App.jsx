@@ -16,9 +16,10 @@ import QuizScreen from "@Screens/Quiz"
 // So I decided just to put it in the end
 import HomeScreen from "@Screens/Home"
 
-import backpackIcon from "@/icons/backpack.svg"
-import chessIcon from "@/icons/chess.svg"
-import hiraganaIcon from "@/icons/japanese-a.svg"
+import backpackIcon from "@/icons/backpack"
+import chessIcon from "@/icons/chess"
+import hiraganaIcon from "@/icons/japanese-a"
+
 import CustomNavigationHeader from "@Components/CustomNavigationHeader"
 
 const Stack = createStackNavigator()

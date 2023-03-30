@@ -1,49 +1,65 @@
-import React from "react"
 import { useState } from "react"
-import { Image, StyleSheet } from "react-native"
-import { Button, useTheme, Text } from "react-native-paper"
+import { StyleSheet, TouchableWithoutFeedback, View } from "react-native"
+import { Text, useTheme } from "react-native-paper"
 
-function StyledButton({ children, icon, ...props }) {
+function StyledButton({ children, icon, style, ...props }) {
   const theme = useTheme()
   const [isPressed, setIsPressed] = useState(false)
 
   const styles = StyleSheet.create({
-    btnNormal: {
-      // FIXME: put the color into theme palette
-      // FIXME: use StyleSheet.create()
-      shadowColor: "#0D6EFD",
-      shadowOffset: { width: 4, height: 4 },
-      shadowRadius: 0,
-      shadowOpacity: 1,
-      borderRadius: 100
+    btn: {
+      flexDirection: "row",
+      justifyContent: "center",
+      backgroundColor: theme.colors.primary,
+      borderRadius: 50,
+      padding: 8,
+      position: "relative"
     },
+    btnText: {
+      marginLeft: 8,
+      color: "#fff"
+    },
+    btnDepth: {
+      backgroundColor: "#0D6EFD",
+      position: "absolute",
+      top: 4,
+      right: -4,
+      bottom: -4,
+      left: 4,
+      zIndex: -1,
+      borderRadius: 50
+    },
+    btnNormal: {},
     btnPressed: {
-      shadowOffset: { width: 0, height: 0 },
-      shadowOpacity: 0,
-      borderRadius: 100,
-      position: "relative",
       bottom: -4,
       right: -4
+    },
+    btnContainer: {
+      position: "relative"
     }
   })
 
   return (
-    <Button
-      mode="contained"
-      buttonColor={theme.colors.primary}
-      labelStyle={{ fontSize: 32 }}
-      icon={({ size, color }) => (
-        <Image source={icon} style={{ width: size, height: size }} />
-      )}
-      style={isPressed ? styles.btnPressed : styles.btnNormal}
-      onPressIn={(e) => setIsPressed(true)}
-      onPressOut={(e) => setIsPressed(false)}
+    <TouchableWithoutFeedback
+      onPressIn={() => setIsPressed(true)}
+      onPressOut={() => setIsPressed(false)}
       {...props}
     >
-      <Text variant="titleLarge" style={{ color: "#fff" }}>
-        {children}
-      </Text>
-    </Button>
+      <View style={{ ...styles.btnContainer, ...style }}>
+        <View
+          style={{
+            ...styles.btn,
+            ...(isPressed ? styles.btnPressed : styles.btnNormal)
+          }}
+        >
+          {icon ? icon({ size: 32 }) : null}
+          <Text variant="titleLarge" style={styles.btnText}>
+            {children}
+          </Text>
+        </View>
+        <View style={styles.btnDepth} />
+      </View>
+    </TouchableWithoutFeedback>
   )
 }
 

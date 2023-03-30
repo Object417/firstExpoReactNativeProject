@@ -1,16 +1,11 @@
-import React from "react"
-import { StyleSheet, View, ScrollView } from "react-native"
-import { Button, Card, List, Text } from "react-native-paper"
+import { fullHiraganaSelector } from "@Store/hiraganaSlice"
+import { StyleSheet, View } from "react-native"
+import { Button, Text } from "react-native-paper"
 import { useDispatch, useSelector } from "react-redux"
-import shuffleList from "shuffle-list"
 import GrowContainer from "../../components/GrowContainer"
 import getRandomItems from "../../helpers/getRandomItems"
-import { fullHiraganaSelector } from "@Store/hiraganaSlice"
 
-import {
-  quizStateSelector,
-  setStatus as setQuizStatus
-} from "../../store/quizSlice"
+import { quizStateSelector } from "../../store/quizSlice"
 
 const styles = StyleSheet.create({
   container: {
@@ -51,7 +46,7 @@ function Quiz({ navigation, route }) {
     ),
     isCorrect: true
   })
-  btnOptions = shuffleList(btnOptions)
+  btnOptions = _.shuffle(btnOptions)
 
   console.log(btnOptions)
 

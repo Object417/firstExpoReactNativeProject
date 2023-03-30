@@ -1,20 +1,28 @@
 import GrowContainer from "@Components/GrowContainer"
 import StyledButton from "@Components/StyledButton"
 import UserProfile from "@Components/UserProfile"
-import { ImageBackground, StyleSheet } from "react-native"
+import { StyleSheet } from "react-native"
 import { useTheme } from "react-native-paper"
 
-import backpackIcon from "@/icons/backpack.svg"
-import chessIcon from "@/icons/chess.svg"
-import hiraganaIcon from "@/icons/japanese-a.svg"
+import BackpackIcon from "@/icons/backpack"
+import ChessIcon from "@/icons/chess"
+import HiraganaIcon from "@/icons/japanese-a"
 
-import homeBg from "@/imgs/homeBg.svg"
+import HomeBg from "@/imgs/home-bg"
 import Constants from "expo-constants"
 import { StatusBar } from "expo-status-bar"
 
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16
+  },
+  bgImg: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    zIndex: -1
   }
 })
 
@@ -24,37 +32,41 @@ function Home({ navigation, route }) {
   return (
     <GrowContainer>
       <StatusBar style="dark" />
-      <ImageBackground
-        source={homeBg}
-        resizeMode="cover"
-        style={{ flexGrow: 1 }}
+      <HomeBg style={styles.bgImg} />
+      <GrowContainer
+        style={{ ...styles.container, paddingTop: Constants.statusBarHeight }}
       >
-        <GrowContainer
-          style={{ ...styles.container, paddingTop: Constants.statusBarHeight }}
-        >
-          <UserProfile />
-          <GrowContainer style={{ justifyContent: "center", gap: 16 }}>
-            <StyledButton
-              icon={chessIcon}
-              onPress={() => navigation.navigate("Quiz")}
-            >
-              Start Quiz
-            </StyledButton>
-            <StyledButton
-              icon={hiraganaIcon}
-              onPress={() => navigation.navigate("Hiragana")}
-            >
-              Learn Hiragana
-            </StyledButton>
-            <StyledButton
-              icon={backpackIcon}
-              onPress={() => navigation.navigate("Learn")}
-            >
-              Explaining Japanese
-            </StyledButton>
-          </GrowContainer>
+        <UserProfile />
+        <GrowContainer style={{ justifyContent: "center" }}>
+          <StyledButton
+            icon={({ size, color }) => (
+              <ChessIcon style={{ width: size, height: size }} />
+            )}
+            onPress={() => navigation.navigate("Quiz")}
+            style={{ marginVertical: 4 }}
+          >
+            Start Quiz
+          </StyledButton>
+          <StyledButton
+            icon={({ size, color }) => (
+              <HiraganaIcon style={{ width: size, height: size }} />
+            )}
+            onPress={() => navigation.navigate("Hiragana")}
+            style={{ marginVertical: 4 }}
+          >
+            Learn Hiragana
+          </StyledButton>
+          <StyledButton
+            icon={({ size, color }) => (
+              <BackpackIcon style={{ width: size, height: size }} />
+            )}
+            onPress={() => navigation.navigate("Learn")}
+            style={{ marginVertical: 4 }}
+          >
+            Explaining Japanese
+          </StyledButton>
         </GrowContainer>
-      </ImageBackground>
+      </GrowContainer>
     </GrowContainer>
   )
 }

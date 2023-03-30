@@ -6,7 +6,8 @@ const userSlice = createSlice({
     xp: 1000,
     correctAnswers: 13,
     wrongAnswers: 4,
-    name: "George Orwell"
+    name: "George Orwell",
+    sex: "male"
   },
   reducers: {
     setUserXP(state, { payload }) {
@@ -29,6 +30,9 @@ const userSlice = createSlice({
     },
     setUserName(state, { payload }) {
       state.name = payload
+    },
+    setUserSex(state, { payload }) {
+      state.sex = payload
     }
   }
 })
@@ -44,6 +48,7 @@ export const {
   changeUserCorrectAnswers,
   setUserWrongAnswers,
   changeUserWrongAnswers,
-  setUserName
+  setUserName,
+  setUserSex
 } = userSlice.actions
 export default userSlice.reducer

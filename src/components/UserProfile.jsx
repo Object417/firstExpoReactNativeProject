@@ -1,10 +1,10 @@
-import React from "react"
-import { Image, StyleSheet, View } from "react-native"
-import { Avatar, Button, Text } from "react-native-paper"
-import profileIconFemale from "@/icons/profile.svg"
-import profileIconMale from "@/icons/account.svg"
-import { useSelector } from "react-redux"
-import { userSelector } from "@Store/userSlice"
+import { setUserSex, userSelector } from "@Store/userSlice"
+import { SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native"
+import { Avatar, Text } from "react-native-paper"
+import { useDispatch, useSelector } from "react-redux"
+
+import FemaleProfileIcon from "@/icons/female-profile"
+import MaleProfileIcon from "@/icons/male-profile"
 
 function UserProfile() {
   const styles = StyleSheet.create({
@@ -26,9 +26,22 @@ function UserProfile() {
       ? 0
       : Math.round((user.correctAnswers * 100) / totalAnswers)
 
+  const dispatch = useDispatch()
+  function toggleUserSex() {
+    dispatch(setUserSex(user.sex === "male" ? "female" : "male"))
+  }
+
   return (
-    <View style={styles.container}>
-      <Avatar.Image source={profileIconMale} size={128} style={{}} />
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity onPress={toggleUserSex}>
+        <Avatar.Image
+          size={128}
+          source={({ size }) =>
+            user.sex === "male" ? <MaleProfileIcon /> : <FemaleProfileIcon />
+          }
+        />
+      </TouchableOpacity>
+
       <View style={{ flex: 1, paddingLeft: 8 }}>
         <Text variant="titleLarge" style={{ fontWeight: "bold" }}>
           {user.name}
@@ -36,7 +49,7 @@ function UserProfile() {
         <Text variant="bodyMedium">{`Level: ${user.xp}`}</Text>
         <Text variant="bodyMedium">{`Accuracy: ${userAccuracy}%`}</Text>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 
