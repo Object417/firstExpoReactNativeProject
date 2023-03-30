@@ -1,16 +1,10 @@
-import React from "react"
+import { setWordIndex, setWordList } from "@/store/quizSlice"
 import { StyleSheet, View } from "react-native"
 import { Button } from "react-native-paper"
 import { useDispatch } from "react-redux"
-import {
-  setState as setQuizState,
-  setStatus as setQuizStatus,
-  setWordIndex,
-  setWordList
-} from "../../store/quizSlice"
 
-import words from "../../store/words.json"
-import getRandomItems from "../../helpers/getRandomItems"
+import getRandomItems from "@/helpers/getRandomItems"
+import words from "@/store/words.json"
 
 const styles = StyleSheet.create({
   container: {

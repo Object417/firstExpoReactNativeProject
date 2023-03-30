@@ -1,11 +1,11 @@
-import { fullHiraganaSelector } from "@Store/hiraganaSlice"
+import GrowContainer from "@/components/GrowContainer"
+import getRandomItems from "@/helpers/getRandomItems"
+import { fullHiraganaSelector } from "@/store/hiraganaSlice"
 import { StyleSheet, View } from "react-native"
 import { Button, Text } from "react-native-paper"
 import { useDispatch, useSelector } from "react-redux"
-import GrowContainer from "../../components/GrowContainer"
-import getRandomItems from "../../helpers/getRandomItems"
 
-import { quizStateSelector } from "../../store/quizSlice"
+import { quizStateSelector } from "@/store/quizSlice"
 
 const styles = StyleSheet.create({
   container: {

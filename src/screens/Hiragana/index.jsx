@@ -3,7 +3,7 @@ import {
   dakutenSelector,
   handakutenSelector,
   hiraganaBaseSelector
-} from "@Store/hiraganaSlice"
+} from "@/store/hiraganaSlice"
 import { Audio } from "expo-av"
 import _ from "lodash"
 

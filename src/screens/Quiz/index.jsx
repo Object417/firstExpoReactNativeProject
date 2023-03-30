@@ -1,13 +1,10 @@
-import { StyleSheet, View } from "react-native"
-import { Text } from "react-native-paper"
-import { useSelector } from "react-redux"
-import { quizStateSelector } from "../../store/quizSlice"
+import { StyleSheet } from "react-native"
 
-import { default as QuizStartScreen } from "./Start"
-import { default as QuizResultsScreen } from "./Results"
-import { default as QuizScreen } from "./Quiz"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { useState } from "react"
+import QuizScreen from "./Quiz"
+import QuizResultsScreen from "./Results"
+import QuizStartScreen from "./Start"
 
 const styles = StyleSheet.create({
   container: {}

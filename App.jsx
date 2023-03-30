@@ -2,25 +2,25 @@ import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 import { useState } from "react"
 
-import store from "@Store/store"
-import theme from "@Store/theme"
+import store from "@/store/store"
+import theme from "@/store/theme"
 import { Provider as StoreProvider } from "react-redux"
 
 import { Provider as PaperProvider } from "react-native-paper"
 
-import HiraganaScreen from "@Screens/Hiragana"
-import LearnScreen from "@Screens/Learn"
-import QuizScreen from "@Screens/Quiz"
+import HiraganaScreen from "@/screens/Hiragana"
+import LearnScreen from "@/screens/Learn"
+import QuizScreen from "@/screens/Quiz"
 
 // For some reason this shit throws an error when is imported first
 // So I decided just to put it in the end
-import HomeScreen from "@Screens/Home"
+import HomeScreen from "@/screens/Home"
 
 import backpackIcon from "@/icons/backpack"
 import chessIcon from "@/icons/chess"
 import hiraganaIcon from "@/icons/japanese-a"
 
-import CustomNavigationHeader from "@Components/CustomNavigationHeader"
+import CustomNavigationHeader from "@/components/CustomNavigationHeader"
 
 const Stack = createStackNavigator()
 

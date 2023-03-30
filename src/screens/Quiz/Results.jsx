@@ -1,11 +1,7 @@
-import React from "react"
+import { quizStateSelector } from "@/store/quizSlice"
 import { StyleSheet, View } from "react-native"
 import { Button, Text } from "react-native-paper"
 import { useDispatch, useSelector } from "react-redux"
-import {
-  quizStateSelector,
-  setStatus as setQuizStatus
-} from "../../store/quizSlice"
 
 const styles = StyleSheet.create({
   container: {

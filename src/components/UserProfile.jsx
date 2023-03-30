@@ -1,4 +1,4 @@
-import { setUserSex, userSelector } from "@Store/userSlice"
+import { setUserSex, userSelector } from "@/store/userSlice"
 import { SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native"
 import { Avatar, Text } from "react-native-paper"
 import { useDispatch, useSelector } from "react-redux"

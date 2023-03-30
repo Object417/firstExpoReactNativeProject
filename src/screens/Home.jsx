@@ -1,6 +1,6 @@
-import GrowContainer from "@Components/GrowContainer"
-import StyledButton from "@Components/StyledButton"
-import UserProfile from "@Components/UserProfile"
+import GrowContainer from "@/components/GrowContainer"
+import StyledButton from "@/components/StyledButton"
+import UserProfile from "@/components/UserProfile"
 import { StyleSheet } from "react-native"
 import { useTheme } from "react-native-paper"
 
