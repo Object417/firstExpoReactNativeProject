@@ -4,6 +4,8 @@ node_modules/
 .git/
 
 # Auto-generated files
-/package-lock.json
+./package-lock.json
 
-./babel.config.js
+# Images
+
+*.svg
