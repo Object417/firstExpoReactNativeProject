@@ -2,8 +2,7 @@
 
 ## Bugs
 
-> **Note**
-> Nothing here yet. Chill!
+- [ ] Quiz score isn't calculated correctly
 
 ## Tasks
 
@@ -11,7 +10,7 @@
 - [x] Navigation between screens
 - [x] Learn how to render other components with props
 - [x] Develop Hiragana screen (cards, play appropriate sound when pressed)
-- [ ] Quiz screen (logic) and subscreens with questions
+- [x] Quiz screen (logic) and subscreens with questions
 
 - [x] Find a way to use module resolve aliases
 - [x] Find a way to automatically import `index` files
@@ -22,4 +21,4 @@
 
 - [ ] Add and configure `eslint`
 - [x] Install `lodash`
-  - [ ] Replace helpers with `lodash`
+  - [x] Replace helpers with `lodash`
