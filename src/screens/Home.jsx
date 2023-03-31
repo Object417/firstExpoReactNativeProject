@@ -9,8 +9,12 @@ import ChessIcon from "@/icons/chess"
 import HiraganaIcon from "@/icons/japanese-a"
 
 import HomeBg from "@/imgs/home-bg"
+import { fullHiraganaSelector } from "@/store/hiraganaSlice"
+import { setWordIndex, setWordList } from "@/store/quizSlice"
 import Constants from "expo-constants"
 import { StatusBar } from "expo-status-bar"
+import _ from "lodash"
+import { useDispatch, useSelector } from "react-redux"
 
 const styles = StyleSheet.create({
   container: {
@@ -28,6 +32,18 @@ const styles = StyleSheet.create({
 
 function Home({ navigation, route }) {
   const theme = useTheme()
+  const dispatch = useDispatch()
+  const fullHiragana = useSelector(fullHiraganaSelector)
+
+  function handleStartQuiz() {
+    const fullHiraganaArr = _.values(fullHiragana)
+    const symbolsList = _.sampleSize(fullHiraganaArr, 10)
+
+    dispatch(setWordList(symbolsList))
+    dispatch(setWordIndex(0))
+
+    navigation.navigate("Quiz")
+  }
 
   return (
     <GrowContainer>
@@ -42,7 +58,7 @@ function Home({ navigation, route }) {
             icon={({ size, color }) => (
               <ChessIcon style={{ width: size, height: size }} />
             )}
-            onPress={() => navigation.navigate("Quiz")}
+            onPress={handleStartQuiz}
             style={{ marginVertical: 4 }}
           >
             Start Quiz
