@@ -17,9 +17,7 @@ function CustomNavigationHeader({ layout, navigation, route, options }) {
       {navigation.canGoBack ? (
         <Appbar.BackAction color="#fff" onPress={() => navigation.goBack()} />
       ) : null}
-      {options.icon ? (
-        <Image source={options.icon} style={styles.icon} />
-      ) : null}
+      {options.icon ? options.icon({ style: styles.icon }) : null}
       <Appbar.Content title={options.title} color="#fff" />
     </Appbar.Header>
   )

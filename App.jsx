@@ -16,9 +16,9 @@ import QuizScreen from "@/screens/Quiz"
 // So I decided just to put it in the end
 import HomeScreen from "@/screens/Home"
 
-import backpackIcon from "@/icons/backpack"
-import chessIcon from "@/icons/chess"
-import hiraganaIcon from "@/icons/japanese-a"
+import BackpackIcon from "@/icons/backpack"
+import ChessIcon from "@/icons/chess"
+import HiraganaIcon from "@/icons/japanese-a"
 
 import CustomNavigationHeader from "@/components/CustomNavigationHeader"
 
@@ -36,10 +36,9 @@ function App() {
     {
       name: "Learn",
       component: LearnScreen,
-
       options: {
         title: "Explaining Japanese",
-        icon: backpackIcon
+        icon: (props) => <BackpackIcon {...props} />
       }
     },
     {
@@ -47,7 +46,7 @@ function App() {
       component: HiraganaScreen,
       options: {
         title: "Learn Hiragana",
-        icon: hiraganaIcon
+        icon: (props) => <HiraganaIcon {...props} />
       }
     },
     {
@@ -55,7 +54,7 @@ function App() {
       component: QuizScreen,
       options: {
         title: "Quiz",
-        icon: chessIcon
+        icon: (props) => <ChessIcon {...props} />
       }
     }
   ])
