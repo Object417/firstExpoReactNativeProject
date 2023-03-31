@@ -11,11 +11,15 @@
 - [x] Learn how to render other components with props
 - [x] Develop Hiragana screen (cards, play appropriate sound when pressed)
 - [x] Quiz screen (logic) and subscreens with questions
+- [ ] Rework Quiz screens
+- [ ] Rework Quiz screen logic
+- [ ] Develop Results screen
 
 - [x] Find a way to use module resolve aliases
 - [x] Find a way to automatically import `index` files
 
 - [x] Set up Redux Store
+- [ ] Rework the Redux Store
 
 - [x] Get all hiragana (dakuten and handakuten also) symbols
 
