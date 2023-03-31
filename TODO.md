@@ -26,3 +26,5 @@
 - [ ] Add and configure `eslint`
 - [x] Install `lodash`
   - [x] Replace helpers with `lodash`
+- [ ] Add initial run tooltips (to let the user know that he can play sounds by
+      pressing cards, toggle avatar, and change name)
