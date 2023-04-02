@@ -1,8 +1,10 @@
 import Link from "@/components/Link"
 import { StatusBar } from "expo-status-bar"
 import { useState } from "react"
-import { View, Image, StyleSheet, ScrollView } from "react-native"
+import { View, Image, StyleSheet, ScrollView, Dimensions } from "react-native"
 import { Text } from "react-native-paper"
+
+// import YoonTable from "@/imgs/hira-yoon-table.jpg"
 
 function LearnScreen() {
   const styles = StyleSheet.create({
@@ -18,6 +20,7 @@ function LearnScreen() {
     },
     img: {
       width: "100%"
+      // maxWidth: "100%"
     },
     paragraph: {
       marginVertical: 4
@@ -75,7 +78,7 @@ function LearnScreen() {
             </Text>
           </>
         ),
-        `Basically, most hiragana symbols can be presented as combination of vowels (a, i, u, e, o) and consonants (k, s, t, n, h, m, y, r, w).However you may noticed that some sounds are written differently(like "shi" instead of "si", "tsu" instead of "tu", or "o" instead of "wo").This is due to Japanese pronunciation peculiarities, so sounds try torepresent as close as possible.`,
+        `Basically, most hiragana symbols can be presented as combination of vowels (a, i, u, e, o) and consonants (k, s, t, n, h, m, y, r, w). However you may noticed that some sounds are written differently (like "shi" instead of "si", "tsu" instead of "tu", or "o" instead of "wo"). This is due to Japanese pronunciation peculiarities, so sounds try to represent as close as possible.`,
         `By the way, the method of representing Japanese syllabaries with latin letters called Romaji. Romaji is not one of Japanese writing systems.It can be helpful in some situations, though romaji is not a reliable substitute for hiragana, katakana, or kanji.`
       ]
     },
@@ -98,10 +101,54 @@ function LearnScreen() {
               </Link>
             </Text>
           </>
-        )
+        ),
+        `Conveniently, the katakana character set covers the same sounds as hiragana.`
       ]
     },
-    { id: 6, title: `Dakuten, Handakuten, and Yoon`, content: [``] }
+    {
+      id: 6,
+      title: `Dakuten, Handakuten, and Yoon`,
+      content: [
+        `You may have noticed that some sounds are missing in Hiragana like "pi", "za", "gyo", "nya", because how would you pronounce Pikachu then? To learn how to make these sounds you don't need to learn new characters but need to know how to modify and combine them.`,
+        `Dakuten is an additional glyph (\u309b) added to characters to indicate that the consonant of a syllable should be pronounced voiced.`,
+        `Handakuten glyph (\u309c) is used with syllabaries started with "h" to indicate that they should instead be pronounced with "p".`,
+        () => (
+          <>
+            <Image
+              source={{
+                uri: "https://www.busuu.com/user/pages/japanese/alphabet/_04-body-2/hiragana-with-dakuten-handakuten-chart-japanese-alphabet.jpg"
+              }}
+              style={{ ...styles.img, aspectRatio: 1000 / 1055 }}
+            />
+            <Text style={styles.caption}>
+              Image from{" "}
+              <Link url={"https://www.busuu.com/en/japanese/alphabet"}>
+                www.busuu.com
+              </Link>
+            </Text>
+          </>
+        ),
+        `Go get sounds like "gyo" and "nya", in Japanese language you need to combine a kana ending in "i" (like "ki" or "ri") with a small kana "ya" (\u3083), "yu" (\u3085), or "yo" (\u3087). Yoon allows you to combine symbols from dakuten and handakuten as well.`,
+        () => (
+          <>
+            <Image
+              source={require("@/imgs/hira-yoon-table.jpg")}
+              style={{
+                ...styles.img,
+                aspectRatio: 646 / 1064,
+                resizeMode: "contain"
+              }}
+            />
+            <Text style={styles.caption}>
+              Image from{" "}
+              <Link url={"https://funjapaneselearning.com/hiragana-course-4/"}>
+                FunJapaneseLearning.com
+              </Link>
+            </Text>
+          </>
+        )
+      ]
+    }
   ])
 
   return (
