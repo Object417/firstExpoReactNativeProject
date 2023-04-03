@@ -3,7 +3,7 @@
 ## Bugs
 
 - [ ] Quiz score isn't calculated correctly
-- [ ] Learn screen Yoon image table has wrong aspect ratio on Android but correct on web
+- [x] Learn screen Yoon image table has wrong aspect ratio on Android but correct on web
 - [ ] Home screen on web is scrollable (probably because of the background image) but not on Android
 
 ## Tasks
