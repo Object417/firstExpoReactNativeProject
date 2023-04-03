@@ -1,6 +1,6 @@
 import Link from "@/components/Link"
 import { StatusBar } from "expo-status-bar"
-import { useState } from "react"
+import { Component, useState } from "react"
 import { View, Image, StyleSheet, ScrollView, Dimensions } from "react-native"
 import { Text } from "react-native-paper"
 
@@ -19,8 +19,8 @@ function LearnScreen() {
       fontWeight: "bold"
     },
     img: {
-      width: "100%"
-      // maxWidth: "100%"
+      width: "100%",
+      height: "auto"
     },
     paragraph: {
       marginVertical: 4
@@ -128,15 +128,14 @@ function LearnScreen() {
             </Text>
           </>
         ),
-        `Go get sounds like "gyo" and "nya", in Japanese language you need to combine a kana ending in "i" (like "ki" or "ri") with a small kana "ya" (\u3083), "yu" (\u3085), or "yo" (\u3087). Yoon allows you to combine symbols from dakuten and handakuten as well.`,
+        `To get sounds like "gyo" and "nya", in Japanese language you need to combine a kana ending in "i" (like "ki" or "ri") with a small kana "ya" (\u3083), "yu" (\u3085), or "yo" (\u3087). Yoon allows you to combine symbols from dakuten and handakuten as well.`,
         () => (
           <>
             <Image
-              source={require("@/imgs/hira-yoon-table.jpg")}
+              source={require("@/imgs/hira-yoon-table.webp")}
               style={{
                 ...styles.img,
-                aspectRatio: 646 / 1064,
-                resizeMode: "contain"
+                aspectRatio: 646 / 1064
               }}
             />
             <Text style={styles.caption}>
@@ -163,7 +162,7 @@ function LearnScreen() {
               </Text>
             ) : null}
             {section.content.map((block, index) => (
-              <View key={index}>
+              <>
                 {typeof block === "function" ? (
                   block()
                 ) : typeof block === "string" ? (
@@ -176,7 +175,7 @@ function LearnScreen() {
                     style={styles.errAlert}
                   >{`Can't handle ${String(block)}`}</Text>
                 )}
-              </View>
+              </>
             ))}
           </View>
         ))}
