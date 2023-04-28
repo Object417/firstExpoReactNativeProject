@@ -57,3 +57,9 @@ pip freeze > requirements.txt
   ["\u307d", "po"]
 ]
 ```
+
+Build an `.apk`
+
+```
+eas build -p android --profile preview
+```
