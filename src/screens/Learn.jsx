@@ -4,8 +4,6 @@ import { Component, useState } from "react"
 import { View, Image, StyleSheet, ScrollView, Dimensions } from "react-native"
 import { Text } from "react-native-paper"
 
-// import YoonTable from "@/imgs/hira-yoon-table.jpg"
-
 function LearnScreen() {
   const styles = StyleSheet.create({
     container: {

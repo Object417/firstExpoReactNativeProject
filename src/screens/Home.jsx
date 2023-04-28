@@ -31,20 +31,6 @@ const styles = StyleSheet.create({
 })
 
 function Home({ navigation, route }) {
-  const theme = useTheme()
-  const dispatch = useDispatch()
-  const fullHiragana = useSelector(fullHiraganaSelector)
-
-  function handleStartQuiz() {
-    const fullHiraganaArr = _.values(fullHiragana)
-    const symbolsList = _.sampleSize(fullHiraganaArr, 10)
-
-    dispatch(setWordList(symbolsList))
-    dispatch(setWordIndex(0))
-
-    navigation.navigate("Quiz")
-  }
-
   return (
     <GrowContainer>
       <StatusBar style="dark" />
@@ -58,7 +44,7 @@ function Home({ navigation, route }) {
             icon={({ size, color }) => (
               <ChessIcon style={{ width: size, height: size }} />
             )}
-            onPress={handleStartQuiz}
+            onPress={() => navigation.navigate("Quiz")}
             style={{ marginVertical: 4 }}
           >
             Start Quiz
