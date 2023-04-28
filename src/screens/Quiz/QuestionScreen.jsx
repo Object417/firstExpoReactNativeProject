@@ -61,7 +61,7 @@ function QuestionScreen({ navigation, route }) {
 
     setTimeout(() => {
       if (answerLetter === wordList[wordIndex].letter) {
-        dispatch(setScore(score + 1))
+        // dispatch(setScore(score + 1))
         dispatch(changeUserCorrectAnswers(1))
       } else {
         dispatch(changeUserWrongAnswers(1))
@@ -112,9 +112,7 @@ function QuestionScreen({ navigation, route }) {
               ...(selectedAnswer
                 ? item === letter
                   ? styles.correctBtn
-                  : selectedAnswer === item && selectedAnswer !== letter
-                  ? styles.wrongBtn
-                  : { opacity: 0.5 }
+                  : styles.wrongBtn
                 : {}),
               marginTop: index > 1 ? 8 : 0,
               marginRight: index % 2 === 0 ? 8 : 0

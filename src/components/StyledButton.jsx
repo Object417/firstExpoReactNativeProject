@@ -52,12 +52,12 @@ function StyledButton({ children, icon, style, ...props }) {
             ...(isPressed ? styles.btnPressed : styles.btnNormal)
           }}
         >
-          {icon ? icon({ size: 32 }) : null}
+          {/* {icon ? icon({ size: 32 }) : null} */}
           <Text variant="titleLarge" style={styles.btnText}>
             {children}
           </Text>
         </View>
-        <View style={styles.btnDepth} />
+        {/* <View style={styles.btnDepth} /> */}
       </View>
     </TouchableWithoutFeedback>
   )

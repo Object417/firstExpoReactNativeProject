@@ -27,10 +27,10 @@ function HiraganaScreen() {
       paddingHorizontal: 16
     },
     symbolCard: {
-      flexGrow: 1,
-      margin: 4,
+      flexGrow: 1
+      // margin: 4
       // aspectRatio: 1 / 1,
-      maxWidth: (Dimensions.get("window").width - 32) / 5 - (5 * 8) / 5
+      // maxWidth: (Dimensions.get("window").width - 32) / 5 - (5 * 8) / 5
       // workaround. I don't know why it calculates incorrectly
       // flexBasis: (Dimensions.get("window").width - 32) / 5 - 8,
       // maxWidth: (Dimensions.get("window").width - 32) / 5 - 6
